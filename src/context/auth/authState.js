@@ -48,7 +48,11 @@ const AuthState = props => {
     };
 
     try {
-      const res = await axios.post('/api/v1/users/signup', formData, config);
+      const res = await axios.post(
+        'https://immense-spire-06276.herokuapp.com/api/v1/users/signup',
+        formData,
+        config
+      );
       dispatch({ type: REGISTER_SUCCESS, payload: res.data });
       loadUser();
     } catch (err) {
@@ -65,7 +69,11 @@ const AuthState = props => {
     };
 
     try {
-      const res = await axios.post('/api/v1/users/login', formData, config);
+      const res = await axios.post(
+        'https://immense-spire-06276.herokuapp.com/api/v1/users/login',
+        formData,
+        config
+      );
       console.log(res);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
       loadUser();
